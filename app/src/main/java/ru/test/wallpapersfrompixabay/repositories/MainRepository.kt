@@ -21,7 +21,7 @@ object MainRepository {
                         val images = try {
                             val options = HashMap<String, String>()
                             options["page"] = page.toString()
-                            options["per_page"] = "3" // Accepted values: 3 - 200
+                            options["per_page"] = "200" // Accepted values: 3 - 200
                             options["pretty"] = "true"
                             RetrofitBuilder.apiService.getImages(options)
                         } catch (e: Exception) {
