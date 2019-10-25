@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">WallpapersFromPixabay</string>
+    <string name="alert_title">Set Wallpaper</string>
+    <string name="alert_ok_dialog_msg">Do you want to set this Wallpaper?</string>
+    <string name="alert_preparing_wallpaper_set">Working on it! Please wait conformation.</string>
+    <string name="alert_failed_wallpaper_set">Oops! Something went wrong. Please try again.</string>
+    <string name="alert_success_wallpaper_set">Wallpaper is set!</string>
+    <string name="alert_btn_ok_name">OK</string>
+    <string name="alert_btn_cancel_name">CANCEL</string>
 </resources>
