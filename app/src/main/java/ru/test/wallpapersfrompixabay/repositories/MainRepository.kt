@@ -11,7 +11,7 @@ object MainRepository {
     private val TAG_ID = MainActivity::class.java.simpleName
     var job: CompletableJob? = null
 
-    fun getImageHits(page: Int): LiveData<ImageHits> {
+    fun getImageHitsByCategory(category: String): LiveData<ImageHits> {
         job = Job()
         return object : LiveData<ImageHits>() {
             override fun onActive() {
@@ -19,15 +19,13 @@ object MainRepository {
                 job?.let {
                     CoroutineScope(Dispatchers.IO + it).launch {
                         val images = try {
-                            val options = HashMap<String, String>()
-                            options["page"] = page.toString()
-                            options["per_page"] = "200" // Accepted values: 3 - 200
-                            options["pretty"] = "true"
-                            RetrofitBuilder.apiService.getImages(options)
+//                            val options = HashMap<String, String>()
+//                            options["category"] = category
+                            RetrofitBuilder.apiService.getImagesByCategory(category)
                         } catch (e: Exception) {
                             Log.d(
                                 TAG_ID,
-                                "FAILED TO EXECUTE RetrofitBuilder.apiService.getImages(page)"
+                                "FAILED TO EXECUTE RetrofitBuilder.apiService.getImagesByCategory(page)"
                             )
                             ImageHits()
                         }

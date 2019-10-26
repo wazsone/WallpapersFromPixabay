@@ -8,18 +8,18 @@ import ru.test.wallpapersfrompixabay.models.ImageHits
 import ru.test.wallpapersfrompixabay.repositories.MainRepository
 
 class MainViewModel : ViewModel() {
-    private val _page: MutableLiveData<Int> = MutableLiveData()
+    private val _category: MutableLiveData<String> = MutableLiveData()
 
     val imageHits: LiveData<ImageHits> = Transformations
-        .switchMap(_page) {
-            MainRepository.getImageHits(it)
+        .switchMap(_category) {
+            MainRepository.getImageHitsByCategory(it)
         }
 
-    fun setPage(update: Int) {
-        if (_page.value == update) {
+    fun setCategory(update: String) {
+        if (_category.value == update) {
             return
         }
-        _page.value = update
+        _category.value = update
     }
 
     fun cancelJobs() {

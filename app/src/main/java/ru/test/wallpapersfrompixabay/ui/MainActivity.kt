@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             main__rv_images.adapter = adapter
             adapter.notifyDataSetChanged()
         })
-        viewModel.setPage(1)
+        viewModel.setCategory("backgrounds")
     }
 
     override fun onDestroy() {
