@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WallpapersFromPixabay</string>
+    <string name="app_name">Wallpapers from Pixabay</string>
     <string name="alert_title">Set Wallpaper</string>
     <string name="alert_ok_dialog_msg">Do you want to set this Wallpaper?</string>
     <string name="alert_preparing_wallpaper_set">Working on it! Please wait conformation.</string>
