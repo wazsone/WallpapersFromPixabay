@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="image_item_iv_size">125dp</dimen>
+    <dimen name="search_edit_text_margin">8dp</dimen>
+    <dimen name="search_btn_corner_rad">8dp</dimen>
+    <dimen name="search_btn_corner_icon_size">28dp</dimen>
+    <dimen name="search_btn_corner_stoke_width">2dp</dimen>
 </resources>

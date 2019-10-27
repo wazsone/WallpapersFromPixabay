@@ -18,7 +18,7 @@ import ru.test.wallpapersfrompixabay.viewmodels.CategoryViewModel
 abstract class CategoryImagesFragment(private val category: String) : Fragment() {
 
     private lateinit var viewModel: CategoryViewModel
-    private val adapter: ImagesRowAdapter = ImagesRowAdapter(listOf())
+    private val adapter: ImagesRowAdapter = ImagesRowAdapter(mutableListOf())
     private lateinit var root: View
 
     override fun onCreateView(
@@ -38,7 +38,7 @@ abstract class CategoryImagesFragment(private val category: String) : Fragment()
 
     private fun initViews() {
         root.category__swipe_refresh_layout.setOnRefreshListener {
-            // TODO
+            viewModel.setCategory(category)
             root.category__swipe_refresh_layout.isRefreshing = false
         }
         val imageItemSizeInDp =
@@ -55,9 +55,7 @@ abstract class CategoryImagesFragment(private val category: String) : Fragment()
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
         viewModel.imageHits.observe(this, Observer {
-            adapter.setImages(it.hits ?: listOf())
-            root.category__rv_images.adapter = adapter
-            adapter.notifyDataSetChanged()
+            adapter.setImages(it.hits)
         })
         viewModel.setCategory(category)
     }

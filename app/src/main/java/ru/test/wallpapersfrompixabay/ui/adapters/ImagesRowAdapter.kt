@@ -18,14 +18,17 @@ import ru.test.wallpapersfrompixabay.models.Image
 import java.io.IOException
 
 
-class ImagesRowAdapter(private var images: List<Image>) :
+class ImagesRowAdapter(private var images: MutableList<Image>) :
     RecyclerView.Adapter<ImagesRowAdapter.ImagesRowViewHolder>() {
 
     private val TAG_ID = ImagesRowAdapter::class.java.simpleName
 
-    fun setImages(images: List<Image>) {
-        if (images.isEmpty()) return
-        this.images = images
+    fun setImages(images: List<Image>?) {
+        images?.let {
+            this.images.clear()
+            this.images.addAll(it)
+            this.notifyDataSetChanged()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

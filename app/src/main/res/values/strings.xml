@@ -14,5 +14,5 @@
     <string name="menu_item_places">Places</string>
     <string name="menu_item_science">Science</string>
     <string name="menu_item_all">All Images</string>
-
+    <string name="search_hint_text">Search in English…</string>
 </resources>

@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/search__swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.fragments.SearchImagesFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search__rv_images"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/search__edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/search_edit_text_margin"
+        android:layout_marginTop="@dimen/search_edit_text_margin"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/roboto"
+        android:hint="@string/search_hint_text"
+        app:layout_constraintBottom_toTopOf="@id/search__swipe_refresh_layout"
+        app:layout_constraintEnd_toStartOf="@id/search__button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search__button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/search_edit_text_margin"
+        android:fontFamily="@font/roboto"
+        android:text="@android:string/search_go"
+        android:textColor="@color/colorAccent"
+        app:backgroundTint="@color/colorWhite"
+        app:cornerRadius="@dimen/search_btn_corner_rad"
+        app:icon="@android:drawable/ic_search_category_default"
+        app:iconGravity="start|textStart"
+        app:iconSize="@dimen/search_btn_corner_icon_size"
+        app:iconTint="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@id/search__edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search__edit_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/colorAccent"
+        app:strokeWidth="@dimen/search_btn_corner_stoke_width" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/search__swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search__edit_text">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search__rv_images"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

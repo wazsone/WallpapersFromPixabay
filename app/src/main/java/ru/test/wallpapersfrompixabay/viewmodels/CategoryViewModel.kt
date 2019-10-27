@@ -16,11 +16,11 @@ class CategoryViewModel : ViewModel() {
             MainRepository.getImageHits(category = it)
         }
 
-    fun setCategory(update: String) {
-        if (_category.value == update) {
-            return
-        }
-        _category.value = update
+    fun setCategory(value: String) {
+//        if (_category.value == value) {
+//            return
+//        }
+        _category.value = value
     }
 
     fun cancelJobs() {

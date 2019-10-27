@@ -16,11 +16,11 @@ class SearchViewModel : ViewModel() {
             MainRepository.getImageHits(query = it)
         }
 
-    fun setQuery(update: String) {
-        if (_query.value == update) {
-            return
-        }
-        _query.value = update
+    fun setQuery(value: String) {
+//        if (_query.value == value) {
+//            return
+//        }
+        _query.value = value
     }
 
     fun cancelJobs() {
