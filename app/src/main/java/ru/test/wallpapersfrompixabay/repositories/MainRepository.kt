@@ -20,6 +20,7 @@ object MainRepository {
                 job?.let {
                     CoroutineScope(Dispatchers.IO + it).launch {
                         val options = HashMap<String, String>()
+                        options["order"] = "latest"
                         options["per_page"] = "200"
                         options["category"] = category
                         options["q"] = query
