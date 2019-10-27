@@ -55,7 +55,7 @@ abstract class CategoryImagesFragment(private val category: String) : Fragment()
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
         viewModel.imageHits.observe(this, Observer {
-            adapter.setImages(it.hits)
+            adapter.setAndUpdateImages(it.hits)
         })
         viewModel.setCategory(category)
     }

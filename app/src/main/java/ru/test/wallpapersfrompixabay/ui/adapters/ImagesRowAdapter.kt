@@ -23,7 +23,7 @@ class ImagesRowAdapter(private var images: MutableList<Image>) :
 
     private val TAG_ID = ImagesRowAdapter::class.java.simpleName
 
-    fun setImages(images: List<Image>?) {
+    fun setAndUpdateImages(images: List<Image>?) {
         images?.let {
             this.images.clear()
             this.images.addAll(it)

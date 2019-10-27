@@ -63,7 +63,7 @@ class SearchImagesFragment : Fragment() {
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this).get(SearchViewModel::class.java)
         viewModel.imageHits.observe(this, Observer {
-            adapter.setImages(it.hits)
+            adapter.setAndUpdateImages(it.hits)
         })
     }
 
