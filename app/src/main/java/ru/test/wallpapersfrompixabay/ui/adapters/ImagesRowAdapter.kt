@@ -24,6 +24,7 @@ class ImagesRowAdapter(private var images: List<Image>) :
     private val TAG_ID = ImagesRowAdapter::class.java.simpleName
 
     fun setImages(images: List<Image>) {
+        if (images.isEmpty()) return
         this.images = images
     }
 
@@ -55,7 +56,7 @@ class ImagesRowAdapter(private var images: List<Image>) :
                         .setMessage(ru.test.wallpapersfrompixabay.R.string.alert_ok_dialog_msg)
                         .setNeutralButton(ru.test.wallpapersfrompixabay.R.string.alert_btn_cancel_name) { _, _ -> }
                         .setPositiveButton(ru.test.wallpapersfrompixabay.R.string.alert_btn_ok_name) { _, _ ->
-                            getAndSetWallPaper(image.largeImageURL!!)
+                            getAndSetWallpaper(image.largeImageURL!!)
                         }
 
                 val dialog: AlertDialog = builder.create()
@@ -63,7 +64,7 @@ class ImagesRowAdapter(private var images: List<Image>) :
             }
         }
 
-        private fun getAndSetWallPaper(imageUrl: String) {
+        private fun getAndSetWallpaper(imageUrl: String) {
             Picasso.get().load(imageUrl)
                 .into(object : Target {
                     override fun onPrepareLoad(placeHolderDrawable: Drawable?) {

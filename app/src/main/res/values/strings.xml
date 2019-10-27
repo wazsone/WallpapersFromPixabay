@@ -5,6 +5,14 @@
     <string name="alert_preparing_wallpaper_set">Working on it! Please wait conformation.</string>
     <string name="alert_failed_wallpaper_set">Oops! Something went wrong. Please try again.</string>
     <string name="alert_success_wallpaper_set">Wallpaper is set!</string>
-    <string name="alert_btn_ok_name">OK</string>
-    <string name="alert_btn_cancel_name">CANCEL</string>
+    <string name="alert_btn_ok_name">@android:string/ok</string>
+    <string name="alert_btn_cancel_name">@android:string/cancel</string>
+    <string name="menu_item_search">Search</string>
+    <string name="menu_item_backgrounds">Backgrounds</string>
+    <string name="menu_item_computer">Computer</string>
+    <string name="menu_item_education">Education</string>
+    <string name="menu_item_places">Places</string>
+    <string name="menu_item_science">Science</string>
+    <string name="menu_item_all">All Images</string>
+
 </resources>
