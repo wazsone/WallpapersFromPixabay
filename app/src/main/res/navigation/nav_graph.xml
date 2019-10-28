@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allImagesFragment">
+    <fragment
+        android:id="@+id/searchImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.SearchImagesFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search_images" />
+    <fragment
+        android:id="@+id/backgroundsImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.BackgroundsImagesFragment"
+        android:label="Backgrounds" />
+    <fragment
+        android:id="@+id/computerImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.ComputerImagesFragment"
+        android:label="Computer" />
+    <fragment
+        android:id="@+id/educationImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.EducationImagesFragment"
+        android:label="Education" />
+    <fragment
+        android:id="@+id/placesImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.PlacesImagesFragment"
+        android:label="Places" />
+    <fragment
+        android:id="@+id/scienceImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.ScienceImagesFragment"
+        android:label="Science" />
+    <fragment
+        android:id="@+id/allImagesFragment"
+        android:name="ru.test.wallpapersfrompixabay.ui.fragments.AllImagesFragment"
+        android:label="All Images" />
+</navigation>

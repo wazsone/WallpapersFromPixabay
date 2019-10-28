@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/allImagesFragment"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="@string/menu_item_all" />
+    <item
+        android:id="@+id/backgroundsImagesFragment"
+        android:title="@string/menu_item_backgrounds" />
+    <item
+        android:id="@+id/computerImagesFragment"
+        android:title="@string/menu_item_computer" />
+    <item
+        android:id="@+id/educationImagesFragment"
+        android:title="@string/menu_item_education" />
+    <item
+        android:id="@+id/placesImagesFragment"
+        android:title="@string/menu_item_places" />
+    <item
+        android:id="@+id/scienceImagesFragment"
+        android:title="@string/menu_item_science" />
+    <item
+        android:id="@+id/searchImagesFragment"
+        android:icon="@android:drawable/ic_search_category_default"
+        android:title="@string/menu_item_search" />
+</menu>
