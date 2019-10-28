@@ -45,7 +45,7 @@ abstract class CategoryImagesFragment(private val category: String) : Fragment()
             this.resources.getDimension(R.dimen.image_item_iv_size) / this.resources.displayMetrics.density
 
         val gridSpinCount =
-            Utility.calculateAmountOfColumns(activity!!.applicationContext, imageItemSizeInDp)
+            Utility.calculateAmountOfColumns(context, imageItemSizeInDp)
         root.category__rv_images.layoutManager =
             StaggeredGridLayoutManager(gridSpinCount, StaggeredGridLayoutManager.VERTICAL)
         root.category__rv_images.itemAnimator = DefaultItemAnimator()

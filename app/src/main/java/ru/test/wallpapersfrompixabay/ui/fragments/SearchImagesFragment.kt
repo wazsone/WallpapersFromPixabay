@@ -43,11 +43,11 @@ class SearchImagesFragment : Fragment() {
             viewModel.setQuery(lastQuery)
             root.search__swipe_refresh_layout.isRefreshing = false
         }
-        val imageItemSizeInDp =
-            this.resources.getDimension(R.dimen.image_item_iv_size) / this.resources.displayMetrics.density
 
+        val imageItemSizeInDp =
+            this@SearchImagesFragment.resources.getDimension(R.dimen.image_item_iv_size) / this@SearchImagesFragment.resources.displayMetrics.density
         val gridSpinCount =
-            Utility.calculateAmountOfColumns(activity!!.applicationContext, imageItemSizeInDp)
+            Utility.calculateAmountOfColumns(context, imageItemSizeInDp)
         root.search__rv_images.layoutManager =
             StaggeredGridLayoutManager(gridSpinCount, StaggeredGridLayoutManager.VERTICAL)
         root.search__rv_images.itemAnimator = DefaultItemAnimator()
