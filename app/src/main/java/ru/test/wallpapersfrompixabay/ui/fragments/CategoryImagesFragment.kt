@@ -60,9 +60,9 @@ abstract class CategoryImagesFragment(private val category: String) : Fragment()
         viewModel.setCategory(category)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
         viewModel.cancelJobs()
+        super.onDestroyView()
     }
 
 }

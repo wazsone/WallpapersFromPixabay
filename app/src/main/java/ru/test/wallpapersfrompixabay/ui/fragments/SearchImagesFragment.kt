@@ -74,10 +74,10 @@ class SearchImagesFragment : Fragment() {
         (activity as MainActivity).showKeyboard()
     }
 
-    override fun onDestroy() {
+    override fun onDestroyView() {
         viewModel.cancelJobs()
         (activity as MainActivity).hideKeyboard()
-        super.onDestroy()
+        super.onDestroyView()
     }
 
 }
